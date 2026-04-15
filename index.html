@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>4 Gewinnt</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>🔴 4 Gewinnt 🟡</h1>
+
+  <!-- Statusanzeige: "Spieler 1 ist dran" usw. -->
+  <div id="status">Lade Spiel...</div>
+
+  <!-- Das Spielfeld wird hier von JavaScript eingefügt -->
+  <div id="board"></div>
+
+  <!-- Buttons zum Neustarten oder KI spielen -->
+  <div id="controls">
+    <button onclick="neuesSpiel()">Neu starten</button>
+    <button onclick="gegenKI()">Gegen KI</button>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>

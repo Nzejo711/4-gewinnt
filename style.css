@@ -1,0 +1,62 @@
+/* Seite zentrieren */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #1a1a2e;
+  color: white;
+}
+
+/* Das Spielfeld: ein blaues Gitter */
+#board {
+  display: inline-grid;
+  grid-template-columns: repeat(7, 70px); /* 7 Spalten à 70px */
+  gap: 8px;
+  background-color: #1565c0;
+  padding: 16px;
+  border-radius: 12px;
+  margin: 20px auto;
+}
+
+/* Jede Zelle */
+.zelle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;       /* macht Kreise */
+  background-color: #1a1a2e;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+/* Spieler 1 = Rot */
+.zelle.spieler1 {
+  background-color: #e53935;
+}
+
+/* Spieler 2 = Gelb */
+.zelle.spieler2 {
+  background-color: #fdd835;
+}
+
+/* Zelle leuchtet auf beim Hovern */
+.zelle:hover {
+  background-color: #37474f;
+}
+
+/* Statustext */
+#status {
+  font-size: 1.4em;
+  margin: 10px;
+}
+
+/* Buttons */
+button {
+  padding: 10px 20px;
+  margin: 8px;
+  font-size: 1em;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #fdd835;
+  color: #1a1a2e;
+  font-weight: bold;
+}
