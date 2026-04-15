@@ -2,7 +2,7 @@ from flask import Flask, send_from_directory
 from flask_socketio import SocketIO, join_room, leave_room, emit
 import os, random, string
 
-app = Flask(__name__, static_folder='../frontend')
+app = Flask(__name__)
 app.config['SECRET_KEY'] = 'geheimespasswort123'
 socketio = SocketIO(app, cors_allowed_origins="*", async_mode='threading')
 
@@ -17,9 +17,16 @@ def raum_id_erstellen():
     return ''.join(random.choices(string.ascii_uppercase, k=4))
 
 # ── Frontend ausliefern ───────────────────────────────────
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 @app.route('/')
 def index():
-    return send_from_directory('../frontend', 'index.html')
+    return send_from_directory(BASE_DIR, 'index.html')
+
+@app.route('/<path:datei>')
+def static_files(datei):
+    return send_from_directory(BASE_DIR, datei)
 
 # ── WebSocket-Events ──────────────────────────────────────
 
