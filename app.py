@@ -4,7 +4,7 @@ import os, random, string
 
 app = Flask(__name__, static_folder='../frontend')
 app.config['SECRET_KEY'] = 'geheimespasswort123'
-socketio = SocketIO(app, cors_allowed_origins="*")
+socketio = SocketIO(app, cors_allowed_origins="*", async_mode='threading')
 
 # Alle aktiven Spielräume speichern
 # { "ABCD": { "spieler": [sid1, sid2], "feld": [...], "amZug": 0 } }
